@@ -43,7 +43,13 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $user = User::findOrFail($request->user);
-
+        $images= $request->file('files_field');
+        $images = $request->photo;
+        if ($request->hasFile('photo')) {
+            $filename = $images->getClientOriginalName();
+            Storage::put('upload/images/'.$filename, file_get_contents($request->file('image')->getRealPath()));
+        }
+        
         $article = Article::create([
             'title'   => $request->title,
             'content' => $request->get('content'), // $request->content

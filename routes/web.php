@@ -43,9 +43,15 @@ Route::post('articles/{id}/comment', [
 ]);
 
 
-Route::get('image-upload-demo', 'ImageController@index');
-Route::post('image-upload-demo', 'ImageController@upload');
+Route::get('image-upload', 'ImageController@index');
+Route::post('store', 'ImageController@store');
+Route::get('upload', 'UploadController@index');
+Route::post('upload/uploadFiles', 'UploadController@multiple_upload');
 
+Route::get('contact', 'ContactController@contact');
+Route::post('contact', ['as'=>'contact.store','uses'=>'ContactController@contactPost']);
+
+Route::get('show', 'ImageController@show');
 
 
 Route::get('/home', 'HomeController@index');
@@ -60,3 +66,7 @@ Route::post('admin_password/reset','AdminAuth\ResetPasswordController@reset');
 Route::get('admin_password/reset/{token}','AdminAuth\ResetPasswordController@showResetForm');
 Route::get('admin_register','AdminAuth\RegisterController@showRegistrationForm');
 Route::post('admin_register','AdminAuth\RegisterController@register');
+
+Route::get('/chat', function(){
+    return view('chat');
+});

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit307f6151ee9a5337d04b1c82c21a6b7e
+class ComposerStaticInit0dd2b2573ff4f25ebb2a9d303e018bdd
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -277,6 +277,7 @@ class ComposerStaticInit307f6151ee9a5337d04b1c82c21a6b7e
         'App\\AdminUser' => __DIR__ . '/../..' . '/app/AdminUser.php',
         'App\\Article' => __DIR__ . '/../..' . '/app/Article.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Contact' => __DIR__ . '/../..' . '/app/Contact.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminAuth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminAuth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\AdminAuth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminAuth/LoginController.php',
@@ -289,6 +290,7 @@ class ComposerStaticInit307f6151ee9a5337d04b1c82c21a6b7e
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\ImageController' => __DIR__ . '/../..' . '/app/Http/Controllers/ImageController.php',
@@ -317,6 +319,7 @@ class ComposerStaticInit307f6151ee9a5337d04b1c82c21a6b7e
         'CreateAdminUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_25_141234_create_admin_users_table.php',
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_24_164314_create_articles_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreateUploadTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_08_142259_create_upload_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/CronExpression.php',
@@ -3251,10 +3254,10 @@ class ComposerStaticInit307f6151ee9a5337d04b1c82c21a6b7e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit307f6151ee9a5337d04b1c82c21a6b7e::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit307f6151ee9a5337d04b1c82c21a6b7e::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit307f6151ee9a5337d04b1c82c21a6b7e::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit307f6151ee9a5337d04b1c82c21a6b7e::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0dd2b2573ff4f25ebb2a9d303e018bdd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0dd2b2573ff4f25ebb2a9d303e018bdd::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit0dd2b2573ff4f25ebb2a9d303e018bdd::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit0dd2b2573ff4f25ebb2a9d303e018bdd::$classMap;
 
         }, null, ClassLoader::class);
     }
