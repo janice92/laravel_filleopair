@@ -41,7 +41,7 @@ Route::post('articles/{id}/comment', [
     'as'   => 'articles.comment',
     'uses' => 'ArticleController@postComment'
 ]);
-
+Route::get('/email', 'HomeController@email')->name('sendEmail');
 
 Route::get('image-upload', 'ImageController@index');
 Route::post('store', 'ImageController@store');
@@ -53,6 +53,7 @@ Route::post('contact', ['as'=>'contact.store','uses'=>'ContactController@contact
 
 Route::get('show', 'ImageController@show');
 
+Route::get('sendmail', 'SendMailController@sendMail');
 
 Route::get('/home', 'HomeController@index');
 Route::get('/admin_home', 'AdminHomeController@index');

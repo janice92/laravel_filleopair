@@ -14,6 +14,8 @@
                     <a href="{{ url('/articles') }}"><button class="btn btn-outline-info">Articles</button></a>
                     |
                     <a href="{{ url('contact') }}"><button class="btn btn-outline-info">Contact</button></a>
+<br>
+                    <a href="{{ route('sendEmail') }}"class="btn btn-block btn-info">Envoyer un Email</a>
 
                 </div>
             </div>
