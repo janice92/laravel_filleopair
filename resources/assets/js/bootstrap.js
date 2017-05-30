@@ -38,3 +38,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: '67ee761ea40764ab701c',
+    cluster: 'eu',
+    encrypted: true
+});

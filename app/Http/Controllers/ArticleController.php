@@ -6,6 +6,7 @@ use App\Models\Blog\Article;
 use App\Models\Blog\Comment;
 use App\User;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ArticleController extends Controller
 {
@@ -43,12 +44,19 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $user = User::findOrFail($request->user);
-        $images= $request->file('files_field');
-        $images = $request->photo;
-        if ($request->hasFile('photo')) {
-            $filename = $images->getClientOriginalName();
-            Storage::put('upload/images/'.$filename, file_get_contents($request->file('image')->getRealPath()));
-        }
+//
+  //     $image = $request->file('image');
+    //   $filename = time(). '-' .$image->getClientOriginalName();
+      //  Image::make($image->getRealPath())->save(public_path('uploads/posts/'.$filename));
+
+
+
+        //$images= $request->file('files_field');
+        //$images = $request->photo;
+        //if ($request->hasFile('photo')) {
+         //   $filename = $images->getClientOriginalName();
+           // Storage::put('upload/images/'.$filename, file_get_contents($request->file('image')->getRealPath()));
+        
         
         $article = Article::create([
             'title'   => $request->title,
@@ -81,7 +89,7 @@ class ArticleController extends Controller
 
         $article->update([
             'title'   => $request->title,
-            'content' => $request->content,
+            'content' => $request->comment,
             'user_id' => $user->id
         ]);
 
@@ -116,10 +124,10 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
 
-        //$comment = new Comment();
-        //$comment->comment = $request->get('comment');
-        //$comment->article_id = $article->id;
-        //$comment->save();
+        $comment = new Comment();
+        $comment->comment = $request->get('comment');
+        $comment->article_id = $article->id;
+        $comment->save();
 
         $comment = Comment::create([
             'comment'    => $request->get('comment'),

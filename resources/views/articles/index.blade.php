@@ -10,6 +10,31 @@
 
         <h1>Liste de mes articles</h1>
 
+        @foreach($articles AS $article)
+
+
+        <div class="col-xs-18 col-sm-6 col-md-3">
+            <div class="thumbnail">
+                 <div class="caption">
+                    <h4>{{ $article->id }}</h4>
+                     <h5>{{ $article->title }}</h5>
+                     <h6>{{ $article->user->name }}</h6>
+                    <p>{{ $article->content }}</p>
+                        <a href="{{ route('articles.show', $article->id) }}" class="btn btn-primary" ><span class="glyphicon glyphicon-eye-open"></span></a>
+                        <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <form action="{{ route('articles.destroy', $article->id) }}" method="post" style="display: inline-block;">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                    </form>
+
+                </div>
+            </div>
+
+
+        </div>
+        @endforeach
+<!--
         <table class="table table-bordered" style="text-align: center">
             <thead>
             <tr>
@@ -44,8 +69,9 @@
                     <a href="{{ route('articles.edit', $article->id) }}">
                     </a>
                 </tr>
-            @endforeach
+           */@endforeach
         </table>
+        -->
     </div>
 
 @stop

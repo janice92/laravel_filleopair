@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
         <!-- Page Header -->
+
 <!-- Set your background image for this header on the line below. -->
 <header class="intro-header">
     <div class="container">
@@ -28,7 +29,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 col-lg-offset-4 col-md-10 col-md-offset-1">
-            <p class="copyright text-muted">Fait par Mette Janice & Le Pape Anne-Hélène - Laravel</p>
+            <p class="copyright text-muted">Fait par Mette Janice & Le Pape Anne-Hélène - Lize</p>
         </div>
     </div>
 </div>

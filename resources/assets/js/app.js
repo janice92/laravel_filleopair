@@ -7,6 +7,9 @@
 
 require('./bootstrap');
 
+Vue.component('chat-messages', require('./components/ChatMessage.vue'));
+Vue.component('chat-form', require('./components/ChatForm.vue'));
+
 window.Vue = require('vue');
 
 /**

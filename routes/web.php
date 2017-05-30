@@ -68,6 +68,17 @@ Route::get('admin_password/reset/{token}','AdminAuth\ResetPasswordController@sho
 Route::get('admin_register','AdminAuth\RegisterController@showRegistrationForm');
 Route::post('admin_register','AdminAuth\RegisterController@register');
 
+
 Route::get('/chat', function(){
     return view('chat');
 });
+Auth::routes();
+
+Broadcast::channel('chat', function ($user) {
+    return Auth::check();
+});
+
+Route::get('/messages', 'ChatsController@index');
+Route::get('messages', 'ChatsController@fetchMessages');
+Route::post('messages', 'ChatsController@sendMessage');
+
